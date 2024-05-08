@@ -4,9 +4,13 @@ import { useState } from "react";
 
 import viteLogo from "../public/vite.svg";
 import reactLogo from "./assets/react.svg";
+import { useGetNewsByCountryQuery } from "./modules/news";
 
 function App() {
   const [count, setCount] = useState(0);
+  const { data } = useGetNewsByCountryQuery("us");
+
+  console.log(JSON.stringify({ data }, null, "\t"));
 
   return (
     <>

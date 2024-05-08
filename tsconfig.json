@@ -3,6 +3,7 @@
     "@tsconfig/vite-react/tsconfig.json",
     "@tsconfig/strictest/tsconfig.json"
   ],
+  "compilerOptions": { "verbatimModuleSyntax": true },
   "exclude": ["node_modules"],
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
