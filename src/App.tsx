@@ -1,20 +1,15 @@
-import "./App.css";
-
-import { useState } from "react";
-
-import viteLogo from "../public/vite.svg";
-import reactLogo from "./assets/react.svg";
+import { css } from "../styled-system/css";
 import { useGetNewsByCountryQuery } from "./modules/news";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   const { data } = useGetNewsByCountryQuery("us");
 
   console.log(JSON.stringify({ data }, null, "\t"));
 
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -33,7 +28,17 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
+      <div
+        className={css({
+          fontSize: "2xl",
+          fontWeight: "bold",
+          borderColor: "red",
+          borderWidth: 1,
+        })}
+      >
+        Hello World
+      </div>
     </>
   );
 }
