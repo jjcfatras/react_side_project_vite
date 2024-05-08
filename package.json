@@ -8,13 +8,17 @@
     "build": "tsc && vite build",
     "lint:check": "eslint . --ext ts,tsx",
     "lint:fix": "eslint . --ext ts,tsx --fix",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compile": "tsc",
+    "clean": "npx rimraf **/node_modules"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@tsconfig/strictest": "^2.0.5",
+    "@tsconfig/vite-react": "^3.0.2",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
