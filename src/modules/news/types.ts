@@ -1,10 +1,10 @@
-export interface ArticleType {
+export interface IArticle {
   source: {
     id: string | null;
     name: string;
   };
   author: string;
-  title: string;
+  title: string | undefined;
   description: string | null;
   url: string;
   urlToImage: string | null;
@@ -12,8 +12,8 @@ export interface ArticleType {
   content: string | null;
 }
 
-export interface NewsResponseType {
+export interface INewsResponse {
   status: "ok" | "error";
   totalResults: number;
-  articles: ArticleType[];
+  articles: IArticle[];
 }
