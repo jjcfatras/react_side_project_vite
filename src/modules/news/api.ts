@@ -1,3 +1,4 @@
+import type { countryCode } from "@modules/news/constants";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 import type { INewsResponse } from "./types";
@@ -11,7 +12,7 @@ export const newsApi = createApi({
     signal: new AbortController().signal,
   }),
   endpoints: (builder) => ({
-    getNewsByCountry: builder.query<INewsResponse, string>({
+    getNewsByCountry: builder.query<INewsResponse, countryCode>({
       query: (country) => `top-headlines?apiKey=${API_KEY}&country=${country}`,
     }),
   }),

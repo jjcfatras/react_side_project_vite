@@ -1,74 +1,35 @@
+import { countryCode, newsApi } from "@modules/news";
+import { Card, Div, Dropdown, Grid } from "@modules/ui";
 import { useState } from "react";
 
-import { css } from "../styled-system/css";
-import { countryCode, type IArticle, newsApi } from "./modules/news";
-
-function App() {
-  const [value, setValue] = useState<string>("us");
+const App = () => {
+  const [value, setValue] = useState(countryCode["US"]);
   const { data } = newsApi.useGetNewsByCountryQuery(value);
 
   console.log(JSON.stringify({ data }, null, "\t"));
 
-  const Card = ({ title }: { title: IArticle["title"] }) => (
-    <div
-      className={css({
-        aspectRatio: "landscape",
-        borderColor: { base: "red", _hover: "blue" },
-        borderWidth: "thin",
-        width: "300px",
-        borderRadius: "md",
-        placeSelf: "center",
-      })}
-    >
-      <text className={css({ fontSize: "s", fontWeight: "bold" })}>
-        {title}
-      </text>
-    </div>
-  );
-
-  const DropDown = () => (
-    <form className={css({ display: "flex", flexDirection: "column" })}>
-      <label>Select Country Code</label>
-      <select
-        value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-      >
-        {Object.keys(countryCode).map((code) => (
-          <option key={code} value={code}>
-            {code}
-          </option>
-        ))}
-      </select>
-    </form>
-  );
-
   return (
-    <div>
-      <div
-        className={css({
-          mb: "10px",
-          bg: "orange",
-          display: "flex",
-          justifyContent: "center",
-        })}
+    <Div>
+      <Div
+        marginBottom="10px"
+        background="orange"
+        display="flex"
+        justifyContent="center"
+        _osDark={{ background: "purple" }}
       >
-        <DropDown />
-      </div>
-      <div
-        className={css({
-          display: "grid",
-          gridTemplateColumns: "3",
-          gap: "10px",
-        })}
-      >
+        <Dropdown<countryCode>
+          value={value}
+          onChange={setValue}
+          label="Select Country Code"
+        />
+      </Div>
+      <Grid gridTemplateColumns={[1, 2, undefined, 3]}>
         {data?.articles.map((item, index) => (
           <Card key={index} title={item.title} />
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Div>
   );
-}
+};
 
 export default App;

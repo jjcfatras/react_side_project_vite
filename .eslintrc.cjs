@@ -12,9 +12,9 @@ module.exports = {
     "plugin:import/typescript",
     "prettier",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  ignorePatterns: ["dist", ".eslintrc.cjs", "styled-system"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "simple-import-sort"],
+  plugins: ["react-refresh", "simple-import-sort", "@typescript-eslint"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",

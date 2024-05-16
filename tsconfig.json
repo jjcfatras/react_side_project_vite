@@ -1,9 +1,19 @@
 {
+  "compilerOptions": {
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "@styled-system/*": ["./styled-system/*"],
+      "@modules/*": ["./src/modules/*"]
+    }
+  },
+  "exclude": ["node_modules", "styled-system"],
   "extends": [
     "@tsconfig/vite-react/tsconfig.json",
     "@tsconfig/strictest/tsconfig.json"
   ],
-  "compilerOptions": { "verbatimModuleSyntax": true },
-  "exclude": ["node_modules"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }
