@@ -14,7 +14,7 @@ module.exports = {
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs", "styled-system"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "simple-import-sort", "@typescript-eslint"],
+  plugins: ["react-refresh", "simple-import-sort", "react"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
@@ -25,6 +25,7 @@ module.exports = {
     "import/no-duplicates": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
+    "react/display-name": "off",
   },
   parserOptions: {
     ecmaVersion: "latest",
