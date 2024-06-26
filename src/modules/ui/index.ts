@@ -1,4 +1,4 @@
 export { Card } from "./Card";
-export { Dropdown, type DropdownProps } from "./Dropdown";
-export { Grid, type GridProps } from "./Grid";
+export { type DropdownProps, Dropdown } from "./Dropdown";
+export { type GridProps, Grid } from "./Grid";
 export * from "./primitives";

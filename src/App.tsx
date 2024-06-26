@@ -1,6 +1,7 @@
+import { useState } from "react";
+
 import { countryCode, newsApi } from "@modules/news";
 import { Card, Div, Dropdown, Grid } from "@modules/ui";
-import { useState } from "react";
 
 const App = () => {
   const [value, setValue] = useState(countryCode["US"]);

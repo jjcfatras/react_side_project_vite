@@ -1,5 +1,6 @@
+import { type Ref, forwardRef } from "react";
+
 import { type HTMLStyledProps, styled } from "@styled-system/jsx";
-import { forwardRef, type Ref } from "react";
 
 export interface TextProps extends HTMLStyledProps<"text"> {}
 

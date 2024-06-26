@@ -1,6 +1,6 @@
-export { Div, type DivProps } from "./Div";
-export { Form, type FormProps } from "./Form";
-export { Label, type LabelProps } from "./Label";
-export { Option, type OptionProps } from "./Option";
-export { Select, type SelectProps } from "./Select";
-export { Text, type TextProps } from "./Text";
+export { type DivProps, Div } from "./Div";
+export { type FormProps, Form } from "./Form";
+export { type LabelProps, Label } from "./Label";
+export { type OptionProps, Option } from "./Option";
+export { type SelectProps, Select } from "./Select";
+export { type TextProps, Text } from "./Text";

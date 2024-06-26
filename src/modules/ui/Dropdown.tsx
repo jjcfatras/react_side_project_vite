@@ -1,15 +1,16 @@
-import { countryCode } from "@modules/news";
 import type { Dispatch, SetStateAction } from "react";
 
+import { countryCode } from "@modules/news";
+
 import {
-  Form,
   type FormProps,
-  Label,
   type LabelProps,
-  Option,
   type OptionProps,
-  Select,
   type SelectProps,
+  Form,
+  Label,
+  Option,
+  Select,
 } from "./primitives";
 
 export interface DropdownProps<T> {

@@ -1,4 +1,4 @@
-/** @type {import('@types/eslint').Linter.BaseConfig} */
+/** @type {import('@types/eslint').Linter.Config} */
 module.exports = {
   root: true,
   env: { browser: true, es2020: true, node: true },
@@ -8,24 +8,60 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
     "prettier",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs", "styled-system"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "simple-import-sort", "react"],
+  plugins: ["react-refresh", "react", "perfectionist"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
     ],
-    "import/first": "error",
-    "import/newline-after-import": "error",
-    "import/no-duplicates": "error",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
     "react/display-name": "off",
+    "perfectionist/sort-imports": [
+      "error",
+      {
+        type: "natural",
+        order: "asc",
+        groups: [
+          "side-effect",
+          ["builtin-type", "builtin"],
+          ["external-type", "external"],
+          ["internal-type", "internal"],
+          ["parent-type", "parent"],
+          ["sibling-type", "sibling"],
+          ["index-type", "index"],
+          "object",
+          "unknown",
+        ],
+        "internal-pattern": ["@modules/**", "@styled-system/**", "~/**"],
+        "newlines-between": "always",
+      },
+    ],
+    "perfectionist/sort-exports": [
+      "error",
+      {
+        type: "natural",
+        order: "asc",
+      },
+    ],
+    "perfectionist/sort-named-exports": [
+      "error",
+      {
+        type: "natural",
+        order: "asc",
+        "group-kind": "types-first",
+      },
+    ],
+    "perfectionist/sort-named-imports": [
+      "error",
+      {
+        type: "natural",
+        order: "asc",
+        "group-kind": "types-first",
+      },
+    ],
   },
   parserOptions: {
     ecmaVersion: "latest",

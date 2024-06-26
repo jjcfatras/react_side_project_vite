@@ -1,4 +1,4 @@
-import { Div, type DivProps } from "./primitives";
+import { type DivProps, Div } from "./primitives";
 
 export interface GridProps extends Omit<DivProps, "display"> {}
 
