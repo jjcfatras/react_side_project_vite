@@ -1,12 +1,14 @@
-import type { IArticle } from "@modules/news";
+import { Div, Img, Text } from "./primitives";
 
-import { Div, Text } from "./primitives";
+interface CardProps {
+  imgUrl: null | string;
+  title: string | undefined;
+}
 
-export const Card = ({ title }: { title: IArticle["title"] }) => (
+export const Card = ({ imgUrl, title }: CardProps) => (
   <Div
     aspectRatio="landscape"
     borderColor={{ _hover: "blue", base: "red" }}
-    borderRadius="md"
     borderWidth="thin"
     placeSelf="center"
     width="300px"
@@ -14,5 +16,6 @@ export const Card = ({ title }: { title: IArticle["title"] }) => (
     <Text fontSize="s" fontWeight="bold">
       {title}
     </Text>
+    {imgUrl && <Img src={imgUrl} />}
   </Div>
 );

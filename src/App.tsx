@@ -26,7 +26,7 @@ const App = () => {
       </Div>
       <Grid gridTemplateColumns={[1, 2, undefined, 3]}>
         {data?.articles.map((item, index) => (
-          <Card key={index} title={item.title} />
+          <Card imgUrl={item.urlToImage} key={index} title={item.title} />
         ))}
       </Grid>
     </Div>
