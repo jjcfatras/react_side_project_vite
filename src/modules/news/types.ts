@@ -1,19 +1,19 @@
 export interface IArticle {
+  author: string;
+  content: null | string;
+  description: null | string;
+  publishedAt: string;
   source: {
-    id: string | null;
+    id: null | string;
     name: string;
   };
-  author: string;
   title: string | undefined;
-  description: string | null;
   url: string;
-  urlToImage: string | null;
-  publishedAt: string;
-  content: string | null;
+  urlToImage: null | string;
 }
 
 export interface INewsResponse {
-  status: "ok" | "error";
-  totalResults: number;
   articles: IArticle[];
+  status: "error" | "ok";
+  totalResults: number;
 }

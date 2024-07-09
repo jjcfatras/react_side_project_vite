@@ -1,3 +1,4 @@
+/* eslint-disable perfectionist/sort-objects */
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 

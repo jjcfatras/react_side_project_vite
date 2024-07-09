@@ -15,22 +15,22 @@ import {
 
 export interface DropdownProps<T> {
   formProps?: FormProps;
+  label?: string;
   labelProps?: LabelProps;
+  onChange: Dispatch<SetStateAction<T>>;
   optionProps?: OptionProps;
   selectProps?: SelectProps;
   value: T;
-  onChange: Dispatch<SetStateAction<T>>;
-  label?: string;
 }
 
 export const Dropdown = <T extends SelectProps["value"]>({
   formProps,
+  label,
   labelProps,
+  onChange,
   optionProps,
   selectProps,
   value,
-  onChange,
-  label,
 }: DropdownProps<T>) => (
   <Form display="flex" flexDirection="column" {...formProps}>
     {label ? <Label {...labelProps}>{label}</Label> : null}

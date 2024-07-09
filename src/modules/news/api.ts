@@ -8,6 +8,7 @@ const API_KEY = "22b3ab4b74ce4cdca7b24a92a2df7bb6";
 
 export const newsApi = createApi({
   reducerPath: "newsApi",
+  // eslint-disable-next-line perfectionist/sort-objects
   baseQuery: fetchBaseQuery({
     baseUrl: `https://newsapi.org/v2/`,
     signal: new AbortController().signal,

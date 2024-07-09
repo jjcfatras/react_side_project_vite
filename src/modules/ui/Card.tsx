@@ -5,7 +5,7 @@ import { Div, Text } from "./primitives";
 export const Card = ({ title }: { title: IArticle["title"] }) => (
   <Div
     aspectRatio="landscape"
-    borderColor={{ base: "red", _hover: "blue" }}
+    borderColor={{ _hover: "blue", base: "red" }}
     borderRadius="md"
     borderWidth="thin"
     placeSelf="center"
