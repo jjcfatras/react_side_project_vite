@@ -35,10 +35,10 @@ export const Dropdown = <T extends SelectProps["value"]>({
   <Form display="flex" flexDirection="column" {...formProps}>
     {label ? <Label {...labelProps}>{label}</Label> : null}
     <Select
-      value={value}
       onChange={(e) => {
         onChange(e.target.value as T);
       }}
+      value={value}
       {...selectProps}
     >
       {Object.keys(countryCode).map((code) => (

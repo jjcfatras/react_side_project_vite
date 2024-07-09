@@ -6,10 +6,10 @@ export const Card = ({ title }: { title: IArticle["title"] }) => (
   <Div
     aspectRatio="landscape"
     borderColor={{ base: "red", _hover: "blue" }}
-    borderWidth="thin"
-    width="300px"
     borderRadius="md"
+    borderWidth="thin"
     placeSelf="center"
+    width="300px"
   >
     <Text fontSize="s" fontWeight="bold">
       {title}

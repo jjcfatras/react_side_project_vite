@@ -12,16 +12,16 @@ const App = () => {
   return (
     <Div>
       <Div
-        marginBottom="10px"
+        _osDark={{ background: "purple" }}
         background="orange"
         display="flex"
         justifyContent="center"
-        _osDark={{ background: "purple" }}
+        marginBottom="10px"
       >
         <Dropdown<countryCode>
-          value={value}
-          onChange={setValue}
           label="Select Country Code"
+          onChange={setValue}
+          value={value}
         />
       </Div>
       <Grid gridTemplateColumns={[1, 2, undefined, 3]}>

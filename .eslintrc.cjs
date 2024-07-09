@@ -10,7 +10,13 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "prettier",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "styled-system"],
+  ignorePatterns: [
+    "dist",
+    ".eslintrc.cjs",
+    "styled-system",
+    "node_modules",
+    "!**/*.{js,jsx,cjs,mjs,ts,tsx}",
+  ],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh", "react", "perfectionist"],
   rules: {
@@ -60,6 +66,13 @@ module.exports = {
         type: "natural",
         order: "asc",
         "group-kind": "types-first",
+      },
+    ],
+    "perfectionist/sort-jsx-props": [
+      "error",
+      {
+        type: "natural",
+        order: "asc",
       },
     ],
   },
