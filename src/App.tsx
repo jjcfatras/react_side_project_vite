@@ -10,17 +10,20 @@ const App = () => {
   console.log(JSON.stringify({ data }, null, "\t"));
 
   return (
-    <Div>
+    <Div justifyContent={"center"}>
       <Div
         _osDark={{ background: "purple" }}
         background="orange"
-        display="flex"
-        justifyContent="center"
         marginBottom="10px"
       >
         <Dropdown<countryCode>
+          formProps={{ debug: true }}
           label="Select Country Code"
           onChange={setValue}
+          selectProps={{
+            alignSelf: "center",
+            width: "1/3",
+          }}
           value={value}
         />
       </Div>

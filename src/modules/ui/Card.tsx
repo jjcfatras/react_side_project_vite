@@ -7,9 +7,9 @@ interface CardProps {
 
 export const Card = ({ imgUrl, title }: CardProps) => (
   <Div
-    aspectRatio="landscape"
     borderColor={{ _hover: "blue", base: "red" }}
     borderWidth="thin"
+    height="300px"
     placeSelf="center"
     width="300px"
   >

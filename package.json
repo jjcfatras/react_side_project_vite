@@ -24,6 +24,7 @@
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@pandacss/dev": "^0.39.1",
+    "@pandacss/eslint-plugin": "^0.1.9",
     "@tsconfig/strictest": "^2.0.5",
     "@tsconfig/vite-react": "^3.0.2",
     "@types/eslint": "^8.56.10",

@@ -1,3 +1,4 @@
+/* eslint-disable perfectionist/sort-objects */
 import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({

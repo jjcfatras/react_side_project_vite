@@ -33,8 +33,13 @@ export const Dropdown = <T extends SelectProps["value"]>({
   value,
 }: DropdownProps<T>) => (
   <Form display="flex" flexDirection="column" {...formProps}>
-    {label ? <Label {...labelProps}>{label}</Label> : null}
+    {label ? (
+      <Label alignSelf={"center"} {...labelProps}>
+        {label}
+      </Label>
+    ) : null}
     <Select
+      color="black"
       onChange={(e) => {
         onChange(e.target.value as T);
       }}
@@ -42,7 +47,12 @@ export const Dropdown = <T extends SelectProps["value"]>({
       {...selectProps}
     >
       {Object.keys(countryCode).map((code) => (
-        <Option key={code} value={code} {...optionProps}>
+        <Option
+          backgroundColor={"red"}
+          key={code}
+          value={code}
+          {...optionProps}
+        >
           {code}
         </Option>
       ))}
